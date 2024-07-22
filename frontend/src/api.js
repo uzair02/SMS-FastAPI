@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: 'http://localhost:8000'
 });
 
-export const getStudents = (page = 1, size = 5) => 
-  api.get('/students', { params: { page, size } });
+export const getStudents = (page = 1, size = 5, filter = '') => 
+  api.get('/students', { params: { page, size, filter } });
 
 export const getStudent = (id) => api.get(`/students/${id}`);
 export const createStudent = (student) => api.post('/students', student);
